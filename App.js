@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 // after `expo install react-native-safe-area-context`.
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,23 +14,30 @@ export default class App extends React.Component {
     };
   }
 
+  // npm i lodash.uniq
+  // 중복된 city 이름이 key값으로 지정되어 warning이 뜬다 -> uniq로 해결
   componentDidMount() {
     fetch(
       "https://raw.githubusercontent.com/example0312/weather-crawler/e3168f2b4e316691f8ab385f738783976eef7f0d/availableCityNames"
     )
       .then((response) => response.json())
       .then((cities) => {
-        console.log("cities =", cities.length);
+        const set = new Set(cities);
+        const citySet = [...set];
         this.setState({
-          cities,
+          cities: citySet,
         });
       });
   }
 
+  onPressCity(item) {
+    console.log("onPressCity =", item);
+  }
+
   renderItem = (city) => (
-    <View style={styles.item}>
+    <TouchableOpacity style={styles.item} onPress={this.onPressCity}>
       <Text style={styles.text}>{city}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
   render() {
