@@ -14,8 +14,7 @@ export default class App extends React.Component {
     };
   }
 
-  // npm i lodash.uniq
-  // 중복된 city 이름이 key값으로 지정되어 warning이 뜬다 -> uniq로 해결
+  // 중복된 city 이름이 key값으로 지정된다 -> set으로 해결
   componentDidMount() {
     fetch(
       "https://raw.githubusercontent.com/example0312/weather-crawler/e3168f2b4e316691f8ab385f738783976eef7f0d/availableCityNames"
@@ -31,11 +30,14 @@ export default class App extends React.Component {
   }
 
   onPressCity(item) {
-    console.log("onPressCity =", item);
+    console.log(`onPressCity = ${item}`);
   }
 
   renderItem = (city) => (
-    <TouchableOpacity style={styles.item} onPress={this.onPressCity}>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => this.onPressCity(city)}
+    >
       <Text style={styles.text}>{city}</Text>
     </TouchableOpacity>
   );
