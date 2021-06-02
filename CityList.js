@@ -1,5 +1,5 @@
-import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default class CityList extends React.Component {
   constructor(props) {
@@ -10,26 +10,34 @@ export default class CityList extends React.Component {
     };
   }
 
+  // 중복된 city 이름이 key값으로 지정된다 -> set으로 해결
   componentDidMount() {
-    fetch('https://raw.githubusercontent.com/example0312/weather-crawler/master/availableCityNames')
-      .then(response => response.json())
-      .then(cities => {
+    fetch(
+      "https://raw.githubusercontent.com/example0312/weather-crawler/e3168f2b4e316691f8ab385f738783976eef7f0d/availableCityNames"
+    )
+      .then((response) => response.json())
+      .then((cities) => {
+        const set = new Set(cities);
+        const citySet = [...set];
         this.setState({
-          cities
+          cities: citySet,
         });
       });
   }
 
   onPressCity(item) {
-    console.log('onPressCity =', item);
-    this.props.navigation.navigate('Detail', {
-      city: item
+    console.log(`onPressCity = ${item}`);
+    this.props.navigation.navigate("Detail", {
+      city: item,
     });
   }
 
   renderItem(city) {
     return (
-      <TouchableOpacity style={styles.item} onPress={() => this.onPressCity(city)}>
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => this.onPressCity(city)}
+      >
         <Text style={styles.text}>{city}</Text>
       </TouchableOpacity>
     );
@@ -37,10 +45,11 @@ export default class CityList extends React.Component {
 
   render() {
     return (
-      <FlatList style={styles.container}
-                renderItem={({ item }) => this.renderItem(item)}
-                keyExtractor={item => item}
-                data={this.state.cities}
+      <FlatList
+        style={styles.container}
+        renderItem={({ item }) => this.renderItem(item)}
+        keyExtractor={(item) => item}
+        data={this.state.cities}
       />
     );
   }
@@ -49,18 +58,18 @@ export default class CityList extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   item: {
     flex: 1,
     height: 50,
-    justifyContent: 'center',
+    justifyContent: "center",
 
     borderWidth: 1,
-    borderColor: 'orange',
+    borderColor: "orange",
   },
   text: {
     fontSize: 20,
-    textAlign: 'center',
-  }
+    textAlign: "center",
+  },
 });
