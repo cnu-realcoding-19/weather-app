@@ -23,8 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5b06ac6-0996-44b3-92fc-3ef9abd66f05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WeatherDetailScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/CityList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,12 +69,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="570" y="146" width="1200" height="795" key="AVDManager" timestamp="1622605639345">
+    <state x="570" y="146" width="1200" height="795" key="AVDManager" timestamp="1622612139356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="570" y="146" width="1200" height="795" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1622605639345" />
+    <state x="570" y="146" width="1200" height="795" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1622612139356" />
+    <state x="1175" y="278" key="FileChooserDialogImpl" timestamp="1622611575950">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1175" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622611575950" />
     <state x="522" y="154" key="SettingsEditor" timestamp="1622602884353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

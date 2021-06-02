@@ -6,6 +6,11 @@ import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default class CityList extends React.Component {
+
+  static navigationOptions = {
+    title: 'Cities'
+  };
+
   constructor(props) {
     super(props);
 
